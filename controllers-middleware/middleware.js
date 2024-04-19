@@ -4,7 +4,10 @@ const createFavorite = async (req, res) => {
   try {
     const data = req.body;
     const Exist = await FavortieModel.findOne(data);
-    if (Exist) res.status(200).json({ msg: "already exists", Exist });
+    if (Exist) {
+      res.status(200).json({ msg: "already exists", Exist });
+      return;
+    }
     const newSongs = await FavortieModel.create(data);
     res.status(201).json({ msg: "created", newSongs });
   } catch (error) {
