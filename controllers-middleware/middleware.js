@@ -24,4 +24,14 @@ const getFavorite = async (req, res) => {
   }
 };
 
-export { createFavorite, getFavorite };
+const deleteFavorite = async (req, res) => {
+  try {
+    const data = req.body;
+    const deleted = await FavortieModel.findOneAndDelete(data);
+    res.status(201).json({ msg: "deleted" });
+  } catch (error) {
+    res.status(501).json({ msg: "error occur in deleting" });
+  }
+};
+
+export { createFavorite, getFavorite, deleteFavorite };
