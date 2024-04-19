@@ -2,11 +2,13 @@ import express from "express";
 import connectDB from "./db/connect-db.js";
 import dotenv from "dotenv";
 import router from "./song-sparkle-router/route.js";
+import cors from "cors";
 
 dotenv.config();
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use("/api/song-sparkle", router);
 
