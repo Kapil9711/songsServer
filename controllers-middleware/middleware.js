@@ -58,7 +58,7 @@ const getUser = async (req, res) => {
     const userExist = await LoginModel.findOne(data);
     if (userExist)
       res.status(200).json({ msg: "login successful", user: userExist });
-    res.status(404).json({ msg: "please register" });
+    res.status(204).json({ msg: "please register" });
   } catch (error) {
     res.status(501).json({ msg: "error in geting all songs" });
   }
