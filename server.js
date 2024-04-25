@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
   res.send("hi");
 });
 
-const port = 5000 || process.env.PORT;
+const port = process.env.PORT || 5000;
 
 const start = async () => {
   try {
