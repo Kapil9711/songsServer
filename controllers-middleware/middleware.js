@@ -27,8 +27,8 @@ const getFavorite = async (req, res) => {
 
 const deleteFavorite = async (req, res) => {
   try {
-    const data = req.body;
-    const deleted = await FavortieModel.findOneAndDelete(data);
+    const { songId } = req.body;
+    const deleted = await FavortieModel.findOneAndDelete({ songId });
     res.status(201).json({ msg: "deleted" });
   } catch (error) {
     res.status(501).json({ msg: "error occur in deleting" });
