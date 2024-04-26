@@ -4,6 +4,8 @@ import dotenv from "dotenv";
 import router from "./song-sparkle-router/route.js";
 import cors from "cors";
 
+app.use(express.urlencoded({ extended: false }));
+
 dotenv.config();
 
 const app = express();
