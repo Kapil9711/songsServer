@@ -10,7 +10,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["https://kapil9711.github.io/Song-sparkle/"],
+    origin: ["https://kapil9711.github.io/Song-sparkle"],
     methods: ["POST", "GET"],
     credentials: true,
   })
