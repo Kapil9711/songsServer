@@ -7,10 +7,11 @@ import cors from "cors";
 dotenv.config();
 
 const app = express();
+// app.use(cors());
 
 app.use(
   cors({
-    origin: ["https://kapil9711.github.io/Song-sparkle"],
+    origin: ["https://kapil9711.github.io/Song-sparkle/"],
     methods: ["POST", "GET"],
     credentials: true,
   })
