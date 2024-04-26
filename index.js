@@ -19,7 +19,7 @@ app.use(express.json());
 app.use("/api/song-sparkle", router);
 
 app.get("/", (req, res) => {
-  res.send("hi");
+  res.json("hi");
 });
 
 const port = process.env.PORT || 5000;
